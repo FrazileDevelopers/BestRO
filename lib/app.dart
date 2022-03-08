@@ -1,4 +1,6 @@
 // assuing this is the root widget of your App
+import 'package:auto_route/auto_route.dart';
+import 'package:bestro/getit.dart';
 import 'package:bestro/routes/router.gr.dart';
 import 'package:flutter/material.dart';
 
@@ -12,14 +14,12 @@ class BestRo extends StatefulWidget {
 }
 
 class _BestRoState extends State<BestRo> {
-  // make sure you don't initiate your router
-  // inside of the build function.
-  final _bestRoRouter = BestRoRouter();
+  final router = getIt<BestRoRouter>();
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      routerDelegate: _bestRoRouter.delegate(),
-      routeInformationParser: _bestRoRouter.defaultRouteParser(),
+      routerDelegate: AutoRouterDelegate(router),
+      routeInformationParser: router.defaultRouteParser(),
       title: BestRoStrings.title,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(

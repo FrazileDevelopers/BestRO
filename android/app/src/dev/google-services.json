@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "747694151101",
+    "project_id": "best-price-ro",
+    "storage_bucket": "best-price-ro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:747694151101:android:3ebdd7074987fef7afaed4",
+        "android_client_info": {
+          "package_name": "com.mylexinfotech.bestro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "747694151101-sd0m3mbkbkk6t8hck1drh8631qlao5a3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAyOUw119kmBtPc-GTm3ScJmAkXri8ls8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "747694151101-sd0m3mbkbkk6t8hck1drh8631qlao5a3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.bestro">
+    package="com.mylexinfotech.bestro">
    <application
         android:label="bestro"
         android:name="${applicationName}"

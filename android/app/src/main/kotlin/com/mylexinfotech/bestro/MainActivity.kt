@@ -1,4 +1,4 @@
-package com.example.bestro
+package com.mylexinfotech.bestro
 
 import io.flutter.embedding.android.FlutterActivity
 
