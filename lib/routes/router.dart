@@ -1,9 +1,11 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:bestro/pages/otp/otp.dart';
 import 'package:bestro/pages/profile/profile.dart';
-import 'package:bestro/pages/splash/spalsh.dart';
+import 'package:bestro/pages/splash/splash.dart';
 
 import '../pages/bottomNavHome/bottomNavHome.dart';
 import '../pages/home/home.dart';
+import '../pages/login/login.dart';
 import '../pages/services/services.dart';
 
 @AdaptiveAutoRouter(
@@ -18,6 +20,8 @@ import '../pages/services/services.dart';
         AutoRoute(page: Profile, name: 'ProfileRouter'),
       ],
     ),
+    AutoRoute(page: Login),
+    AutoRoute(page: Otp),
   ],
 )
 // extend the generated private router

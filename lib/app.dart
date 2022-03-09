@@ -23,7 +23,7 @@ class _BestRoState extends State<BestRo> {
       title: BestRoStrings.title,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Colors.white,
+        primaryColor: Color(0xFF1b35a6),
         brightness: Brightness.light,
         scaffoldBackgroundColor: Colors.white,
       ),
