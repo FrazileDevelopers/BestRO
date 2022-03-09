@@ -1,4 +1,5 @@
 import 'package:bestro/constants/strings.dart';
+import 'package:bestro/models/servicesModel.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -21,15 +22,21 @@ class _HomePageState extends State<HomePage> {
     'assets/slider/7.jpg',
   ];
 
+  List<ServicesModel> services = [
+    ServicesModel(image: 'assets/services/1.jpg', name: 'Service'),
+    ServicesModel(image: 'assets/services/2.jpg', name: 'Repair'),
+    ServicesModel(image: 'assets/services/3.jpg', name: 'Installation'),
+    ServicesModel(image: 'assets/services/4.jpg', name: 'Uninstallation AMC'),
+    ServicesModel(image: 'assets/services/5.png', name: 'New RO'),
+  ];
+
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
   }
 
@@ -47,6 +54,10 @@ class _HomePageState extends State<HomePage> {
             CarouselSlider(
               options: CarouselOptions(
                   height: height * .34,
+                  viewportFraction: 1.0,
+                  initialPage: 0,
+                  enableInfiniteScroll: true,
+                  enlargeCenterPage: false,
                   autoPlay: true,
                   onPageChanged: (index, reason) {
                     setState(() {
@@ -132,7 +143,7 @@ class _HomePageState extends State<HomePage> {
                 scrollDirection: Axis.horizontal,
                 physics: BouncingScrollPhysics(),
                 children: List.generate(
-                  5,
+                  services.length,
                   (i) => Container(
                     width: 100.0,
                     decoration: BoxDecoration(
@@ -152,13 +163,18 @@ class _HomePageState extends State<HomePage> {
                           child: Container(
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                image: AssetImage('assets/slider/1.jpg'),
+                                image: AssetImage(services[i].image),
                               ),
                               shape: BoxShape.circle,
                             ),
                           ),
                         ),
-                        Text('Services'),
+                        Text(
+                          services[i].name,
+                          style: TextStyle(
+                            fontSize: width * .035,
+                          ),
+                        ),
                       ],
                     ),
                   ),

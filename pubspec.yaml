@@ -29,13 +29,16 @@ environment:
 dependencies:
   auto_route: ^3.2.4
   carousel_slider: ^4.0.0
+  cloud_firestore: ^3.1.10
   cupertino_icons: ^1.0.2
+  firebase_auth: ^3.3.9
   firebase_core: ^1.13.1
   firebase_crashlytics: ^2.5.3
   firebase_messaging: ^11.2.8
   firebase_storage: ^10.2.9
   flutter:
     sdk: flutter
+  freezed_annotation: ^1.1.0
   get_it: ^7.2.0
 
 dev_dependencies:
@@ -45,6 +48,13 @@ dev_dependencies:
   flutter_lints: ^1.0.0
   flutter_test:
     sdk: flutter
+  freezed: ^1.1.1
+#   flutter_launcher_icons: ^0.9.2
+
+# flutter_icons:
+#   android: "launcher_icon"
+#   ios: true
+#   image_path: "assets/icon/icon.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -54,3 +64,5 @@ flutter:
   assets:
     - assets/slider/
     - assets/bg/
+    - assets/services/
+    - assets/icon/
