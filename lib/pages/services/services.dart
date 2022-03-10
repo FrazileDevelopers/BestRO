@@ -1,3 +1,5 @@
+import 'package:bestro/constants/colors.dart';
+import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 
 class Services extends StatefulWidget {
@@ -89,10 +91,132 @@ class _ServicesState extends State<Services> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: List.generate(
-                10,
+                5,
                 (s) => Container(
                   width: width,
-                  decoration: BoxDecoration(),
+                  decoration: BoxDecoration(
+                    color: BestRoColors.white,
+                    border: Border(
+                      bottom: BorderSide(
+                        color: Colors.grey[300]!,
+                      ),
+                    ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: width * .07),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text('Service Check Up'),
+                                  Text('5.0 20k ratings'),
+                                  Text('₹299 - 60 min'),
+                                  DottedLine(
+                                    direction: Axis.horizontal,
+                                    lineLength: width * .5,
+                                    lineThickness: 3.0,
+                                    dashColor: BestRoColors.lightGrey,
+                                    dashRadius: 10.0,
+                                    dashGapRadius: 5.0,
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: width * .25,
+                                width: width * .25,
+                                child: Stack(
+                                  fit: StackFit.loose,
+                                  children: [
+                                    Container(
+                                      height: width * .22,
+                                      width: width * .22,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: NetworkImage(
+                                              'https://images.unsplash.com/photo-1646724351789-559d36cdfaff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'),
+                                          fit: BoxFit.cover,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(5.0),
+                                      ),
+                                    ),
+                                    Positioned(
+                                      left: (width * .2) * .13,
+                                      bottom: 4.0,
+                                      child: Container(
+                                        height: height * .03,
+                                        width: (width * .2) * .8,
+                                        decoration: BoxDecoration(
+                                          color: BestRoColors.white,
+                                          borderRadius:
+                                              BorderRadius.circular(5.0),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: BestRoColors.grey,
+                                              blurRadius: 1.0,
+                                              spreadRadius: 1.0,
+                                              offset: Offset(1.0, 1.0),
+                                            ),
+                                          ],
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'ADD +',
+                                            style: TextStyle(
+                                              color: BestRoColors.blue,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: width * .07),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(right: 5.0),
+                                child: Container(
+                                  height: 5.0,
+                                  width: 5.0,
+                                  decoration: BoxDecoration(
+                                    color: BestRoColors.grey,
+                                    borderRadius: BorderRadius.circular(5.0),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: height * .03,
+                                child: Text('Includes'),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ),
             ),
