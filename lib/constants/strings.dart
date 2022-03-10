@@ -9,4 +9,6 @@ class BestRoStrings {
   static const String indiaCode = '+91';
   static const String otpTag =
       'We have sent you a 4 digit verification code on ';
+  static const String serviceTitle = 'Water Purifier';
+  static const String serviceDetailTitle = 'Service Details';
 }

@@ -1,4 +1,5 @@
 import 'package:bestro/constants/colors.dart';
+import 'package:bestro/constants/strings.dart';
 import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +34,7 @@ class _ServicesState extends State<Services> {
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
         elevation: 0.0,
-        title: Text('Water Purifier'),
+        title: Text(BestRoStrings.serviceTitle),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
