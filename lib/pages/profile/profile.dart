@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../constants/strings.dart';
+
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
 
@@ -12,7 +14,10 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black,
+        elevation: 0.0,
+        title: Text(BestRoStrings.profileTitle),
       ),
     );
   }
