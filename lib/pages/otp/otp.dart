@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:bestro/constants/strings.dart';
 import 'package:bestro/constants/values.dart';
+import 'package:bestro/validations/fzvalidations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -30,13 +31,11 @@ class _OtpState extends State<Otp> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
   }
 
@@ -100,6 +99,7 @@ class _OtpState extends State<Otp> {
                 child: Pinput(
                   length: 4,
                   obscureText: true,
+                  validator: (otp) => FzValidation.otpValidator(otp),
                   onCompleted: (value) => BestRoValues.otp = value,
                 ),
               ),
@@ -112,7 +112,7 @@ class _OtpState extends State<Otp> {
                   if (validateAndSave()) {
                     // await reguser.registerUser();
                     // if (reguser.getResponseJson().status == true) {
-                    context.router.push(BottomNavHome());
+                    context.router.push(BottomNavHomeRouter());
                     // } else {
                     //   print(reguser.getResponseJson().status.toString());
                     // }

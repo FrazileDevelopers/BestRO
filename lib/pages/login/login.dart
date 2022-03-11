@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:bestro/app.dart';
 import 'package:bestro/constants/colors.dart';
 import 'package:bestro/constants/strings.dart';
 import 'package:bestro/constants/values.dart';
+import 'package:bestro/pages/otp/otp.dart';
 import 'package:bestro/routes/router.gr.dart';
 import 'package:bestro/validations/fzvalidations.dart';
 import 'package:flutter/material.dart';
@@ -102,7 +102,7 @@ class _LoginState extends State<Login> {
                   if (validateAndSave()) {
                     // await reguser.registerUser();
                     // if (reguser.getResponseJson().status == true) {
-                    context.router.push(Otp());
+                    context.router.push(OtpRouter());
                     // } else {
                     //   print(reguser.getResponseJson().status.toString());
                     // }

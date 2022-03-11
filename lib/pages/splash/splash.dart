@@ -21,7 +21,6 @@ class _SplashState extends State<Splash> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
   }
 
@@ -30,7 +29,7 @@ class _SplashState extends State<Splash> {
       // 5s over, navigate to a new page
       context.router.replaceAll(
         [
-          Login(),
+          LoginRouter(),
         ],
       );
     });

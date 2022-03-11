@@ -1,7 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:bestro/constants/colors.dart';
 import 'package:bestro/constants/strings.dart';
 import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
+
+import '../../routes/router.gr.dart';
 
 class Services extends StatefulWidget {
   const Services({Key? key}) : super(key: key);
@@ -35,6 +38,7 @@ class _ServicesState extends State<Services> {
         foregroundColor: Colors.black,
         elevation: 0.0,
         title: Text(BestRoStrings.serviceTitle),
+        automaticallyImplyLeading: false,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -66,16 +70,19 @@ class _ServicesState extends State<Services> {
                     padding: EdgeInsets.all(2.0),
                     backgroundColor: Colors.white,
                     side: BorderSide(
-                      color: Colors.grey[300]!,
+                      color: BestRoColors.lightGrey,
                     ),
                     label: Text(
                       'Services',
                       style: TextStyle(
-                        color: _isSelected ? Colors.white : Colors.black,
+                        color: _isSelected
+                            ? BestRoColors.white
+                            : BestRoColors.blue,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                     selected: _isSelected,
-                    selectedColor: Colors.black,
+                    selectedColor: BestRoColors.blue,
                     onSelected: (bool s) {
                       setState(() {
                         _isSelected = s;
@@ -83,6 +90,47 @@ class _ServicesState extends State<Services> {
                     },
                   ),
                 ),
+              ),
+            ),
+          ),
+          Container(
+            height: height * .09,
+            width: width,
+            decoration: BoxDecoration(
+              color: BestRoColors.white,
+              border: Border(
+                bottom: BorderSide(
+                  color: BestRoColors.lightGrey,
+                ),
+              ),
+            ),
+            child: Padding(
+              padding: EdgeInsets.only(left: width * .03, right: width * .07),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Text(
+                    BestRoStrings.checkRates,
+                    style: TextStyle(
+                      color: BestRoColors.blue,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18.0,
+                    ),
+                  ),
+                  MaterialButton(
+                    onPressed: () => context.router.push(RateListRouter()),
+                    child: Text(BestRoStrings.ratelist),
+                    color: BestRoColors.blue,
+                    textColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(5.0),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
@@ -100,7 +148,7 @@ class _ServicesState extends State<Services> {
                       color: BestRoColors.white,
                       border: Border(
                         bottom: BorderSide(
-                          color: Colors.grey[300]!,
+                          color: BestRoColors.lightGrey,
                         ),
                       ),
                     ),
@@ -122,9 +170,83 @@ class _ServicesState extends State<Services> {
                                       MainAxisAlignment.spaceEvenly,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text('Service Check Up'),
-                                    Text('5.0 20k ratings'),
-                                    Text('₹299 - 60 min'),
+                                    Text(
+                                      'Service Check Up',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14.0,
+                                      ),
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Icon(
+                                          Icons.star,
+                                          color: BestRoColors.blue,
+                                          size: 14.0,
+                                        ),
+                                        Text(
+                                          '5.0 ',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 12.0,
+                                          ),
+                                        ),
+                                        Text(
+                                          '20.5K ratings',
+                                          style: TextStyle(
+                                            fontSize: 12.0,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      width: width * .3,
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Text(
+                                                '₹18,000',
+                                                style: TextStyle(
+                                                  decoration: TextDecoration
+                                                      .lineThrough,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 12.0,
+                                                ),
+                                              ),
+                                              Text(
+                                                '50% OFF',
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 11.0,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          Text(
+                                            '₹9,000',
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 14.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
                                     DottedLine(
                                       direction: Axis.horizontal,
                                       lineLength: width * .5,
@@ -157,28 +279,33 @@ class _ServicesState extends State<Services> {
                                       Positioned(
                                         left: (width * .2) * .13,
                                         bottom: 4.0,
-                                        child: Container(
-                                          height: height * .03,
-                                          width: (width * .2) * .8,
-                                          decoration: BoxDecoration(
-                                            color: BestRoColors.white,
-                                            borderRadius:
-                                                BorderRadius.circular(5.0),
-                                            boxShadow: [
-                                              BoxShadow(
-                                                color: BestRoColors.grey,
-                                                blurRadius: 1.0,
-                                                spreadRadius: 1.0,
-                                                offset: Offset(1.0, 1.0),
-                                              ),
-                                            ],
-                                          ),
-                                          child: Center(
-                                            child: Text(
-                                              'ADD +',
-                                              style: TextStyle(
-                                                color: BestRoColors.blue,
-                                                fontWeight: FontWeight.bold,
+                                        child: InkWell(
+                                          onTap: () {
+                                            print('ADD');
+                                          },
+                                          child: Container(
+                                            height: height * .03,
+                                            width: (width * .2) * .8,
+                                            decoration: BoxDecoration(
+                                              color: BestRoColors.white,
+                                              borderRadius:
+                                                  BorderRadius.circular(5.0),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: BestRoColors.grey,
+                                                  blurRadius: 1.0,
+                                                  spreadRadius: 1.0,
+                                                  offset: Offset(1.0, 1.0),
+                                                ),
+                                              ],
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                'ADD +',
+                                                style: TextStyle(
+                                                  color: BestRoColors.blue,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -190,50 +317,47 @@ class _ServicesState extends State<Services> {
                               ],
                             ),
                           ),
-                          Padding(
-                            padding:
-                                EdgeInsets.symmetric(horizontal: width * .07),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(right: 5.0),
-                                  child: Container(
-                                    height: 5.0,
-                                    width: 5.0,
-                                    decoration: BoxDecoration(
-                                      color: BestRoColors.grey,
-                                      borderRadius: BorderRadius.circular(5.0),
+                          ...List.generate(
+                            3,
+                            (desc) => Padding(
+                              padding:
+                                  EdgeInsets.symmetric(horizontal: width * .07),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  SizedBox(
+                                    height: height * .055,
+                                    child: Row(
+                                      children: [
+                                        Container(
+                                          height: 5.0,
+                                          width: 5.0,
+                                          decoration: BoxDecoration(
+                                            color: BestRoColors.grey,
+                                            shape: BoxShape.circle,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 5.0,
+                                        ),
+                                        SizedBox(
+                                          width: width * .7,
+                                          child: Text(
+                                            'Includes cleaning of the machine and filters.filters.filters.',
+                                            maxLines: 2,
+                                            overflow: TextOverflow.ellipsis,
+                                            style: TextStyle(
+                                              fontSize: 12.0,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
-                                ),
-                                SizedBox(
-                                  height: height * .03,
-                                  child: Row(
-                                    children: [
-                                      Container(
-                                        height: 5.0,
-                                        width: 5.0,
-                                        decoration: BoxDecoration(
-                                          color: BestRoColors.lightGrey,
-                                          shape: BoxShape.circle,
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: 5.0,
-                                      ),
-                                      Text(
-                                        'Includes cleaning of the machine and filters.',
-                                        style: TextStyle(
-                                          fontSize: 12.0,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ],
