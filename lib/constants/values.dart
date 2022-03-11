@@ -3,4 +3,5 @@ class BestRoValues {
   static String? otp = '';
   static int qty = 1;
   static String? name;
+  static String? email;
 }
