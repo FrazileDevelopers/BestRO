@@ -7,7 +7,7 @@ class BestRoStrings {
   static const String nameLabel = 'Full Name';
   static const String emailLabel = 'Email';
   static const String otpLabel = 'Enter Verification Code';
-  static String otpVerify = 'Login';
+  static String otpVerify = 'Verify OTP';
   static const String indiaCode = '+91';
   static const String otpTag =
       'We have sent you a 4 digit verification code on ';

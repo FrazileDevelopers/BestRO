@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'logout_bloc.dart';
+part of 'services_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,8 +15,8 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$LogoutEventTearOff {
-  const _$LogoutEventTearOff();
+class _$ServicesEventTearOff {
+  const _$ServicesEventTearOff();
 
   _Started started() {
     return const _Started();
@@ -24,10 +24,10 @@ class _$LogoutEventTearOff {
 }
 
 /// @nodoc
-const $LogoutEvent = _$LogoutEventTearOff();
+const $ServicesEvent = _$ServicesEventTearOff();
 
 /// @nodoc
-mixin _$LogoutEvent {
+mixin _$ServicesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
@@ -63,19 +63,20 @@ mixin _$LogoutEvent {
 }
 
 /// @nodoc
-abstract class $LogoutEventCopyWith<$Res> {
-  factory $LogoutEventCopyWith(
-          LogoutEvent value, $Res Function(LogoutEvent) then) =
-      _$LogoutEventCopyWithImpl<$Res>;
+abstract class $ServicesEventCopyWith<$Res> {
+  factory $ServicesEventCopyWith(
+          ServicesEvent value, $Res Function(ServicesEvent) then) =
+      _$ServicesEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LogoutEventCopyWithImpl<$Res> implements $LogoutEventCopyWith<$Res> {
-  _$LogoutEventCopyWithImpl(this._value, this._then);
+class _$ServicesEventCopyWithImpl<$Res>
+    implements $ServicesEventCopyWith<$Res> {
+  _$ServicesEventCopyWithImpl(this._value, this._then);
 
-  final LogoutEvent _value;
+  final ServicesEvent _value;
   // ignore: unused_field
-  final $Res Function(LogoutEvent) _then;
+  final $Res Function(ServicesEvent) _then;
 }
 
 /// @nodoc
@@ -85,7 +86,7 @@ abstract class _$StartedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$StartedCopyWithImpl<$Res> extends _$LogoutEventCopyWithImpl<$Res>
+class __$StartedCopyWithImpl<$Res> extends _$ServicesEventCopyWithImpl<$Res>
     implements _$StartedCopyWith<$Res> {
   __$StartedCopyWithImpl(_Started _value, $Res Function(_Started) _then)
       : super(_value, (v) => _then(v as _Started));
@@ -101,7 +102,7 @@ class _$_Started implements _Started {
 
   @override
   String toString() {
-    return 'LogoutEvent.started()';
+    return 'ServicesEvent.started()';
   }
 
   @override
@@ -170,13 +171,13 @@ class _$_Started implements _Started {
   }
 }
 
-abstract class _Started implements LogoutEvent {
+abstract class _Started implements ServicesEvent {
   const factory _Started() = _$_Started;
 }
 
 /// @nodoc
-class _$LogoutStateTearOff {
-  const _$LogoutStateTearOff();
+class _$ServicesStateTearOff {
+  const _$ServicesStateTearOff();
 
   _Initial initial() {
     return const _Initial();
@@ -184,10 +185,10 @@ class _$LogoutStateTearOff {
 }
 
 /// @nodoc
-const $LogoutState = _$LogoutStateTearOff();
+const $ServicesState = _$ServicesStateTearOff();
 
 /// @nodoc
-mixin _$LogoutState {
+mixin _$ServicesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -223,19 +224,20 @@ mixin _$LogoutState {
 }
 
 /// @nodoc
-abstract class $LogoutStateCopyWith<$Res> {
-  factory $LogoutStateCopyWith(
-          LogoutState value, $Res Function(LogoutState) then) =
-      _$LogoutStateCopyWithImpl<$Res>;
+abstract class $ServicesStateCopyWith<$Res> {
+  factory $ServicesStateCopyWith(
+          ServicesState value, $Res Function(ServicesState) then) =
+      _$ServicesStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LogoutStateCopyWithImpl<$Res> implements $LogoutStateCopyWith<$Res> {
-  _$LogoutStateCopyWithImpl(this._value, this._then);
+class _$ServicesStateCopyWithImpl<$Res>
+    implements $ServicesStateCopyWith<$Res> {
+  _$ServicesStateCopyWithImpl(this._value, this._then);
 
-  final LogoutState _value;
+  final ServicesState _value;
   // ignore: unused_field
-  final $Res Function(LogoutState) _then;
+  final $Res Function(ServicesState) _then;
 }
 
 /// @nodoc
@@ -245,7 +247,7 @@ abstract class _$InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$LogoutStateCopyWithImpl<$Res>
+class __$InitialCopyWithImpl<$Res> extends _$ServicesStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
       : super(_value, (v) => _then(v as _Initial));
@@ -261,7 +263,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'LogoutState.initial()';
+    return 'ServicesState.initial()';
   }
 
   @override
@@ -330,6 +332,6 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements LogoutState {
+abstract class _Initial implements ServicesState {
   const factory _Initial() = _$_Initial;
 }

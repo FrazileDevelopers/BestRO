@@ -16,6 +16,7 @@ class BestRo extends StatefulWidget {
 
 class _BestRoState extends State<BestRo> {
   final router = getIt<BestRoRouter>();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(

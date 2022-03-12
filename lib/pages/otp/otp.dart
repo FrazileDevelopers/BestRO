@@ -49,6 +49,7 @@ class _OtpState extends State<Otp> {
       key: _scaffoldKey,
       appBar: AppBar(
         backgroundColor: Colors.white,
+        automaticallyImplyLeading: false,
         title: Text(
           BestRoStrings.otpText,
           style: TextStyle(
