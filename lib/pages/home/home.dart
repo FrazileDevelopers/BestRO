@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             CarouselSlider(
               options: CarouselOptions(
-                  height: height * .34,
+                  height: height * .4,
                   viewportFraction: 1.0,
                   initialPage: 0,
                   enableInfiniteScroll: true,
@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                       image: AssetImage(
                         assetImages[i],
                       ),
-                      fit: BoxFit.cover,
+                      fit: BoxFit.fill,
                     ),
                   ),
                 ),
@@ -101,7 +101,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Container(
-              height: height * .2,
+              height: height * .1,
               width: width,
               color: Colors.black,
               child: Column(
