@@ -16,7 +16,7 @@ class Splash extends StatefulWidget {
 class _SplashState extends State<Splash> {
   @override
   void initState() {
-    // navigateToHome();
+    navigateToHome();
     super.initState();
   }
 
@@ -25,16 +25,16 @@ class _SplashState extends State<Splash> {
     super.dispose();
   }
 
-  // navigateToHome() async {
-  //   Timer(Duration(seconds: 5), () {
-  //     // 5s over, navigate to a new page
-  //     context.router.replaceAll(
-  //       [
-  //         LoginRouter(),
-  //       ],
-  //     );
-  //   });
-  // }
+  navigateToHome() async {
+    Timer(Duration(seconds: 5), () {
+      // 5s over, navigate to a new page
+      context.router.replaceAll(
+        [
+          LoginRouter(),
+        ],
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

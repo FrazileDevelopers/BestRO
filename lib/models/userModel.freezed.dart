@@ -11,17 +11,18 @@ part of 'userModel.dart';
 
 T _$identity<T>(T value) => value;
 
-
-final _privateConstructorUsedError = UnsupportedError('It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 class _$UserModelTearOff {
   const _$UserModelTearOff();
 
-_UserModel call({required  required phone}) {
-  return  _UserModel(phone:phone,);
-}
-
+  _UserModel call({required String phone}) {
+    return _UserModel(
+      phone: phone,
+    );
+  }
 }
 
 /// @nodoc
@@ -29,30 +30,18 @@ const $UserModel = _$UserModelTearOff();
 
 /// @nodoc
 mixin _$UserModel {
+  String get phone => throw _privateConstructorUsedError;
 
- required get phone => throw _privateConstructorUsedError;
-
-
-
-
-
-
-
-
-@JsonKey(ignore: true)
-$UserModelCopyWith<UserModel> get copyWith => throw _privateConstructorUsedError;
-
+  @JsonKey(ignore: true)
+  $UserModelCopyWith<UserModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UserModelCopyWith<$Res>  {
-  factory $UserModelCopyWith(UserModel value, $Res Function(UserModel) then) = _$UserModelCopyWithImpl<$Res>;
-$Res call({
- required phone
-});
-
-
-
+abstract class $UserModelCopyWith<$Res> {
+  factory $UserModelCopyWith(UserModel value, $Res Function(UserModel) then) =
+      _$UserModelCopyWithImpl<$Res>;
+  $Res call({String phone});
 }
 
 /// @nodoc
@@ -63,91 +52,88 @@ class _$UserModelCopyWithImpl<$Res> implements $UserModelCopyWith<$Res> {
   // ignore: unused_field
   final $Res Function(UserModel) _then;
 
-@override $Res call({Object? phone = freezed,}) {
-  return _then(_value.copyWith(
-phone: phone == freezed ? _value.phone : phone // ignore: cast_nullable_to_non_nullable
-as required,
-  ));
+  @override
+  $Res call({
+    Object? phone = freezed,
+  }) {
+    return _then(_value.copyWith(
+      phone: phone == freezed
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
-
-}
-
 
 /// @nodoc
 abstract class _$UserModelCopyWith<$Res> implements $UserModelCopyWith<$Res> {
-  factory _$UserModelCopyWith(_UserModel value, $Res Function(_UserModel) then) = __$UserModelCopyWithImpl<$Res>;
-@override $Res call({
- required phone
-});
-
-
-
+  factory _$UserModelCopyWith(
+          _UserModel value, $Res Function(_UserModel) then) =
+      __$UserModelCopyWithImpl<$Res>;
+  @override
+  $Res call({String phone});
 }
 
 /// @nodoc
-class __$UserModelCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res> implements _$UserModelCopyWith<$Res> {
+class __$UserModelCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res>
+    implements _$UserModelCopyWith<$Res> {
   __$UserModelCopyWithImpl(_UserModel _value, $Res Function(_UserModel) _then)
       : super(_value, (v) => _then(v as _UserModel));
 
-@override
-_UserModel get _value => super._value as _UserModel;
+  @override
+  _UserModel get _value => super._value as _UserModel;
 
-@override $Res call({Object? phone = freezed,}) {
-  return _then(_UserModel(
-phone: phone == freezed ? _value.phone : phone // ignore: cast_nullable_to_non_nullable
-as required,
-  ));
-}
-
-
+  @override
+  $Res call({
+    Object? phone = freezed,
+  }) {
+    return _then(_UserModel(
+      phone: phone == freezed
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
-
-class _$_UserModel  implements _UserModel {
+class _$_UserModel implements _UserModel {
   const _$_UserModel({required this.phone});
 
-  
+  @override
+  final String phone;
 
-@override  final required phone;
+  @override
+  String toString() {
+    return 'UserModel(phone: $phone)';
+  }
 
-@override
-String toString() {
-  return 'UserModel(phone: $phone)';
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _UserModel &&
+            const DeepCollectionEquality().equals(other.phone, phone));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(phone));
+
+  @JsonKey(ignore: true)
+  @override
+  _$UserModelCopyWith<_UserModel> get copyWith =>
+      __$UserModelCopyWithImpl<_UserModel>(this, _$identity);
 }
-
-
-@override
-bool operator ==(dynamic other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UserModel&&const DeepCollectionEquality().equals(other.phone, phone));
-}
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(phone));
-
-@JsonKey(ignore: true)
-@override
-_$UserModelCopyWith<_UserModel> get copyWith => __$UserModelCopyWithImpl<_UserModel>(this, _$identity);
-
-
-
-
-
-
-
-
-}
-
 
 abstract class _UserModel implements UserModel {
-  const factory _UserModel({required  required phone}) = _$_UserModel;
-  
+  const factory _UserModel({required String phone}) = _$_UserModel;
 
-  
-
-@override  required get phone;
-@override @JsonKey(ignore: true)
-_$UserModelCopyWith<_UserModel> get copyWith => throw _privateConstructorUsedError;
-
+  @override
+  String get phone;
+  @override
+  @JsonKey(ignore: true)
+  _$UserModelCopyWith<_UserModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }

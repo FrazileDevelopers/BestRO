@@ -29,6 +29,10 @@ class _$AuthenticationEventTearOff {
       user,
     );
   }
+
+  Initial initial() {
+    return const Initial();
+  }
 }
 
 /// @nodoc
@@ -40,18 +44,21 @@ mixin _$AuthenticationEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String phone) sendOTP,
     required TResult Function(auth.User user) authChanged,
+    required TResult Function() initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String phone)? sendOTP,
     TResult Function(auth.User user)? authChanged,
+    TResult Function()? initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone)? sendOTP,
     TResult Function(auth.User user)? authChanged,
+    TResult Function()? initial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -59,18 +66,21 @@ mixin _$AuthenticationEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(SendOTP value) sendOTP,
     required TResult Function(AuthChanged value) authChanged,
+    required TResult Function(Initial value) initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(SendOTP value)? sendOTP,
     TResult Function(AuthChanged value)? authChanged,
+    TResult Function(Initial value)? initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SendOTP value)? sendOTP,
     TResult Function(AuthChanged value)? authChanged,
+    TResult Function(Initial value)? initial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -158,6 +168,7 @@ class _$SendOTP implements SendOTP {
   TResult when<TResult extends Object?>({
     required TResult Function(String phone) sendOTP,
     required TResult Function(auth.User user) authChanged,
+    required TResult Function() initial,
   }) {
     return sendOTP(phone);
   }
@@ -167,6 +178,7 @@ class _$SendOTP implements SendOTP {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String phone)? sendOTP,
     TResult Function(auth.User user)? authChanged,
+    TResult Function()? initial,
   }) {
     return sendOTP?.call(phone);
   }
@@ -176,6 +188,7 @@ class _$SendOTP implements SendOTP {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone)? sendOTP,
     TResult Function(auth.User user)? authChanged,
+    TResult Function()? initial,
     required TResult orElse(),
   }) {
     if (sendOTP != null) {
@@ -189,6 +202,7 @@ class _$SendOTP implements SendOTP {
   TResult map<TResult extends Object?>({
     required TResult Function(SendOTP value) sendOTP,
     required TResult Function(AuthChanged value) authChanged,
+    required TResult Function(Initial value) initial,
   }) {
     return sendOTP(this);
   }
@@ -198,6 +212,7 @@ class _$SendOTP implements SendOTP {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(SendOTP value)? sendOTP,
     TResult Function(AuthChanged value)? authChanged,
+    TResult Function(Initial value)? initial,
   }) {
     return sendOTP?.call(this);
   }
@@ -207,6 +222,7 @@ class _$SendOTP implements SendOTP {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SendOTP value)? sendOTP,
     TResult Function(AuthChanged value)? authChanged,
+    TResult Function(Initial value)? initial,
     required TResult orElse(),
   }) {
     if (sendOTP != null) {
@@ -291,6 +307,7 @@ class _$AuthChanged implements AuthChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(String phone) sendOTP,
     required TResult Function(auth.User user) authChanged,
+    required TResult Function() initial,
   }) {
     return authChanged(user);
   }
@@ -300,6 +317,7 @@ class _$AuthChanged implements AuthChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String phone)? sendOTP,
     TResult Function(auth.User user)? authChanged,
+    TResult Function()? initial,
   }) {
     return authChanged?.call(user);
   }
@@ -309,6 +327,7 @@ class _$AuthChanged implements AuthChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String phone)? sendOTP,
     TResult Function(auth.User user)? authChanged,
+    TResult Function()? initial,
     required TResult orElse(),
   }) {
     if (authChanged != null) {
@@ -322,6 +341,7 @@ class _$AuthChanged implements AuthChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(SendOTP value) sendOTP,
     required TResult Function(AuthChanged value) authChanged,
+    required TResult Function(Initial value) initial,
   }) {
     return authChanged(this);
   }
@@ -331,6 +351,7 @@ class _$AuthChanged implements AuthChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(SendOTP value)? sendOTP,
     TResult Function(AuthChanged value)? authChanged,
+    TResult Function(Initial value)? initial,
   }) {
     return authChanged?.call(this);
   }
@@ -340,6 +361,7 @@ class _$AuthChanged implements AuthChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SendOTP value)? sendOTP,
     TResult Function(AuthChanged value)? authChanged,
+    TResult Function(Initial value)? initial,
     required TResult orElse(),
   }) {
     if (authChanged != null) {
@@ -356,6 +378,115 @@ abstract class AuthChanged implements AuthenticationEvent {
   @JsonKey(ignore: true)
   $AuthChangedCopyWith<AuthChanged> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $InitialCopyWith<$Res> {
+  factory $InitialCopyWith(Initial value, $Res Function(Initial) then) =
+      _$InitialCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$InitialCopyWithImpl<$Res>
+    extends _$AuthenticationEventCopyWithImpl<$Res>
+    implements $InitialCopyWith<$Res> {
+  _$InitialCopyWithImpl(Initial _value, $Res Function(Initial) _then)
+      : super(_value, (v) => _then(v as Initial));
+
+  @override
+  Initial get _value => super._value as Initial;
+}
+
+/// @nodoc
+
+class _$Initial implements Initial {
+  const _$Initial();
+
+  @override
+  String toString() {
+    return 'AuthenticationEvent.initial()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Initial);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String phone) sendOTP,
+    required TResult Function(auth.User user) authChanged,
+    required TResult Function() initial,
+  }) {
+    return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String phone)? sendOTP,
+    TResult Function(auth.User user)? authChanged,
+    TResult Function()? initial,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String phone)? sendOTP,
+    TResult Function(auth.User user)? authChanged,
+    TResult Function()? initial,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SendOTP value) sendOTP,
+    required TResult Function(AuthChanged value) authChanged,
+    required TResult Function(Initial value) initial,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SendOTP value)? sendOTP,
+    TResult Function(AuthChanged value)? authChanged,
+    TResult Function(Initial value)? initial,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SendOTP value)? sendOTP,
+    TResult Function(AuthChanged value)? authChanged,
+    TResult Function(Initial value)? initial,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Initial implements AuthenticationEvent {
+  const factory Initial() = _$Initial;
 }
 
 /// @nodoc

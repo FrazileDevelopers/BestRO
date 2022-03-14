@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:bestro/constants/strings.dart';
 import 'package:bestro/constants/values.dart';
 import 'package:bestro/validations/fzvalidations.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,6 +21,9 @@ class Otp extends StatefulWidget {
 class _OtpState extends State<Otp> {
   final _formKey = GlobalKey<FormState>();
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+  User? firebaseUser;
+  String? _verificationCode;
   bool validateAndSave() {
     final form = _formKey.currentState;
     if (form!.validate()) {
@@ -32,6 +36,7 @@ class _OtpState extends State<Otp> {
   @override
   void initState() {
     super.initState();
+    _verifyPhone();
   }
 
   @override
@@ -98,10 +103,23 @@ class _OtpState extends State<Otp> {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Pinput(
-                  length: 4,
+                  length: 6,
                   obscureText: true,
                   validator: (otp) => FzValidation.otpValidator(otp),
-                  onCompleted: (value) => BestRoValues.otp = value,
+                  onSubmitted: (pin) async {
+                    await _firebaseAuth
+                        .signInWithCredential(
+                      PhoneAuthProvider.credential(
+                          verificationId: _verificationCode!, smsCode: pin),
+                    )
+                        .then((value) async {
+                      if (value.user != null) {
+                        context.router.replaceAll(
+                          [LoginRouter()],
+                        );
+                      }
+                    });
+                  },
                 ),
               ),
               SizedBox(
@@ -128,6 +146,46 @@ class _OtpState extends State<Otp> {
           ),
         ),
       ),
+    );
+  }
+
+  _verifyPhone() async {
+    print('+91' + BestRoValues.phone!);
+    await _firebaseAuth.verifyPhoneNumber(
+      phoneNumber: "+91" + BestRoValues.phone!,
+      verificationCompleted: (PhoneAuthCredential credential) async {
+        // ANDROID ONLY!
+
+        // Sign the user in (or link) with the auto-generated credential
+        final signedInUser =
+            await _firebaseAuth.signInWithCredential(credential);
+        firebaseUser = signedInUser.user;
+      },
+      verificationFailed: (FirebaseAuthException e) {
+        if (e.code == 'invalid-phone-number') {
+          print('The provided phone number is not valid.');
+        }
+
+        // Handle other errors
+      },
+      codeSent: (String verificationId, int? resendToken) async {
+        // Update the UI - wait for the user to enter the SMS code
+        // String smsCode = 'xxxx';
+
+        setState(() {
+          _verificationCode = verificationId;
+        });
+        // Create a PhoneAuthCredential with the code
+        // PhoneAuthCredential credential = PhoneAuthProvider.credential(
+        //     verificationId: verificationId, smsCode: smsCode);
+
+        // Sign the user in (or link) with the credential
+        // await _firebaseAuth.signInWithCredential(credential);
+      },
+      codeAutoRetrievalTimeout: (String verificationId) {
+        // Auto-resolution timed out...
+      },
+      timeout: Duration(seconds: 60),
     );
   }
 }

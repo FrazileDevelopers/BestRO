@@ -24,9 +24,9 @@ class AuthenticationBloc
         ),
       );
     });
+    on<Initial>((event, emit) {});
     on<SendOTP>((event, emit) {
       emit(AuthenticationState.initial());
-      
     });
   }
 }

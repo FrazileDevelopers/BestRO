@@ -90,6 +90,7 @@ class _LoginState extends State<Login> {
                   maxLength: 10,
                   keyboardType: TextInputType.phone,
                   onSaved: (val) => BestRoValues.phone = val,
+                  onFieldSubmitted: (val) => BestRoValues.phone = val,
                   validator: (val) => FzValidation.phoneValidator(val),
                 ),
               ),

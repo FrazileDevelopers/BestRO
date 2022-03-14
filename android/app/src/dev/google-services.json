@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "747694151101-2pnst6sphs3uj1kehnvi9v0ia9q8ssd3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mylexinfotech.bestro",
+            "certificate_hash": "eb65b218b66a228a66dc4a3fff6dd695bdfcf09b"
+          }
+        },
+        {
           "client_id": "747694151101-sd0m3mbkbkk6t8hck1drh8631qlao5a3.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,6 +37,13 @@
             {
               "client_id": "747694151101-sd0m3mbkbkk6t8hck1drh8631qlao5a3.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "747694151101-toe1oh0efef4gsu09995k9dq6e8akal2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mylexinfotech.bestro"
+              }
             }
           ]
         }
