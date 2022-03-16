@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pinput.dart';
+import 'package:firebase_auth/firebase_auth.dart' as Auth;
 
 import '../../constants/colors.dart';
 import '../../routes/router.gr.dart';
@@ -24,6 +25,7 @@ class _OtpState extends State<Otp> {
   FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   User? firebaseUser;
   String? _verificationCode;
+  TextEditingController pinController = TextEditingController();
   bool validateAndSave() {
     final form = _formKey.currentState;
     if (form!.validate()) {
@@ -106,37 +108,44 @@ class _OtpState extends State<Otp> {
                   length: 6,
                   obscureText: true,
                   validator: (otp) => FzValidation.otpValidator(otp),
+                  controller: pinController,
                   onSubmitted: (pin) async {
-                    await _firebaseAuth
-                        .signInWithCredential(
-                      PhoneAuthProvider.credential(
-                          verificationId: _verificationCode!, smsCode: pin),
-                    )
-                        .then((value) async {
-                      if (value.user != null) {
-                        context.router.replaceAll(
-                          [LoginRouter()],
-                        );
-                      }
-                    });
+                    // await _firebaseAuth
+                    //     .signInWithCredential(
+                    //   PhoneAuthProvider.credential(
+                    //       verificationId: _verificationCode!, smsCode: pin),
+                    // )
+                    //     .then((value) async {
+                    //   if (value.user != null) {
+                    //     context.router.replaceAll(
+                    //       [
+                    //         LoginRouter(),
+                    //       ],
+                    //     );
+                    //   }
+                    // });
                   },
                 ),
               ),
               SizedBox(
                 height: height * .02,
               ),
+              Text(BestRoStrings.otpError),
               MaterialButton(
                 onPressed: () async {
                   SystemChannels.textInput.invokeMethod('TextInput.hide');
-                  if (validateAndSave()) {
-                    // await reguser.registerUser();
-                    // if (reguser.getResponseJson().status == true) {
-                    context.router.push(BottomNavHomeRouter());
-                    // } else {
-                    //   print(reguser.getResponseJson().status.toString());
-                    // }
-                    print(BestRoValues.otp);
-                  }
+                  print('OTP = $_verificationCode');
+                  print('Verification => ' + _verificationCode.toString());
+                  Auth.PhoneAuthCredential credential =
+                      Auth.PhoneAuthProvider.credential(
+                          verificationId: _verificationCode!,
+                          smsCode: pinController.text);
+
+                  final Auth.User? user =
+                      (await _firebaseAuth.signInWithCredential(credential))
+                          .user;
+                  print(user!.uid.toString());
+                  context.router.push(BottomNavHomeRouter());
                 },
                 child: Text(BestRoStrings.otpVerify),
                 color: BestRoColors.blue,
@@ -163,8 +172,11 @@ class _OtpState extends State<Otp> {
         firebaseUser = signedInUser.user;
       },
       verificationFailed: (FirebaseAuthException e) {
+        //failed
         if (e.code == 'invalid-phone-number') {
           print('The provided phone number is not valid.');
+        } else {
+          print(e.code.toString());
         }
 
         // Handle other errors
@@ -185,6 +197,7 @@ class _OtpState extends State<Otp> {
       },
       codeAutoRetrievalTimeout: (String verificationId) {
         // Auto-resolution timed out...
+        //todo timout
       },
       timeout: Duration(seconds: 60),
     );

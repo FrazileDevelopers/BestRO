@@ -20,4 +20,5 @@ class BestRoStrings {
   static const String updateProfile = 'Update Profile';
   static const String ratelist = 'Rate List';
   static const String checkRates = 'Check Rates ->';
+  static String otpError = '';
 }
