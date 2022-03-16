@@ -156,6 +156,7 @@ class _OtpState extends State<Otp> {
       verificationCompleted: (PhoneAuthCredential credential) async {
         // ANDROID ONLY!
 
+        print('CREDENTIAL = ' + credential.token.toString());
         // Sign the user in (or link) with the auto-generated credential
         final signedInUser =
             await _firebaseAuth.signInWithCredential(credential);
