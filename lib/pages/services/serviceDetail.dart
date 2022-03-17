@@ -44,7 +44,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
                 children: List.generate(
-                  5,
+                  1,
                   (i) => Container(
                     width: width,
                     decoration: BoxDecoration(
@@ -67,7 +67,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Service Check up',
+                                'Services',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -88,7 +88,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                                   SizedBox(
                                     width: width * .6,
                                     child: Text(
-                                      'Includes cleaning of the machine and filters.',
+                                      'HYGIENE CHARGES',
                                       maxLines: 2,
                                       overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
@@ -114,7 +114,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                                   SizedBox(
                                     width: width * .6,
                                     child: Text(
-                                      'Includes cleaning of the machine and filters.',
+                                      'CLEANING OF FILTER',
                                       maxLines: 2,
                                       overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
@@ -140,7 +140,59 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                                   SizedBox(
                                     width: width * .6,
                                     child: Text(
-                                      'Includes cleaning of the machine and filters.',
+                                      'CLEANING OF RO',
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                        fontSize: 12.0,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                    height: 5.0,
+                                    width: 5.0,
+                                    decoration: BoxDecoration(
+                                      color: BestRoColors.lightGrey,
+                                      shape: BoxShape.circle,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 10.0,
+                                  ),
+                                  SizedBox(
+                                    width: width * .6,
+                                    child: Text(
+                                      'TDS CHECK',
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                        fontSize: 12.0,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                    height: 5.0,
+                                    width: 5.0,
+                                    decoration: BoxDecoration(
+                                      color: BestRoColors.lightGrey,
+                                      shape: BoxShape.circle,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 10.0,
+                                  ),
+                                  SizedBox(
+                                    width: width * .6,
+                                    child: Text(
+                                      'VISIT CHARGE',
                                       maxLines: 2,
                                       overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
@@ -256,27 +308,27 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                             style: TextStyle(fontSize: 12.0),
                           ),
                           Text(
-                            '₹ 500.00',
+                            '₹ 150.00',
                             style: TextStyle(fontSize: 12.0),
                           ),
                         ],
                       ),
                       SizedBox(height: 10.0),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Text(
-                            'Safety & Partner Welfare Fees',
-                            style: TextStyle(fontSize: 12.0),
-                          ),
-                          Text(
-                            '₹ 500.00',
-                            style: TextStyle(fontSize: 12.0),
-                          ),
-                        ],
-                      ),
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //   crossAxisAlignment: CrossAxisAlignment.center,
+                      //   mainAxisSize: MainAxisSize.max,
+                      //   children: [
+                      //     Text(
+                      //       'Safety & Partner Welfare Fees',
+                      //       style: TextStyle(fontSize: 12.0),
+                      //     ),
+                      //     Text(
+                      //       '₹ 500.00',
+                      //       style: TextStyle(fontSize: 12.0),
+                      //     ),
+                      //   ],
+                      // ),
                     ],
                   ),
                 ),
@@ -298,7 +350,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Text(
-                          '₹ 1000.00',
+                          '₹ 150.00',
                           style: TextStyle(
                             color: BestRoColors.white,
                             fontWeight: FontWeight.bold,
