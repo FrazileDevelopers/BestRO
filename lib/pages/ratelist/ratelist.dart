@@ -31,7 +31,7 @@ class _RateListState extends State<RateList> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
-        elevation: 0.0,
+        // elevation: 0.0,
         title: Text(BestRoStrings.ratelist),
       ),
       body: Container(),

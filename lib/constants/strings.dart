@@ -12,7 +12,7 @@ class BestRoStrings {
   static const String otpTag =
       'We have sent you a 4 digit verification code on ';
   static const String serviceTitle = 'Services';
-  static const String serviceDetailTitle = 'Service Details';
+  static const String cartTitle = 'Cart';
   static const String profileTitle = 'Manage Account';
   static const String editProfileTitle = 'Edit Profile';
   static const String profilePic =

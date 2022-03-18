@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
     ServicesModel(image: 'assets/services/2.jpg', name: 'Repair'),
     ServicesModel(image: 'assets/services/3.jpg', name: 'Installation'),
     ServicesModel(image: 'assets/services/4.jpg', name: 'Uninstallation'),
-    ServicesModel(image: 'assets/services/4.jpg', name: 'AMC'),
+    ServicesModel(image: 'assets/services/6.jpg', name: 'AMC'),
     ServicesModel(image: 'assets/services/5.png', name: 'New RO'),
   ];
 

@@ -32,8 +32,8 @@ class _ServiceDetailsState extends State<ServiceDetails> {
       appBar: AppBar(
         backgroundColor: BestRoColors.white,
         foregroundColor: BestRoColors.black,
-        elevation: 0.0,
-        title: Text(BestRoStrings.serviceDetailTitle),
+        // elevation: 0.0,
+        title: Text(BestRoStrings.cartTitle),
       ),
       body: Column(
         children: [
@@ -274,65 +274,6 @@ class _ServiceDetailsState extends State<ServiceDetails> {
           Stack(
             alignment: Alignment.center,
             children: [
-              Container(
-                height: height * .25,
-                width: width,
-                decoration: BoxDecoration(
-                  color: BestRoColors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30.0),
-                    topRight: Radius.circular(30.0),
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: BestRoColors.grey,
-                      offset: Offset(0.0, 5.0),
-                      blurRadius: 5.0,
-                      spreadRadius: 10.0,
-                    ),
-                  ],
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(12.0, 30.0, 12.0, 12.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Text(
-                            'Item Total',
-                            style: TextStyle(fontSize: 12.0),
-                          ),
-                          Text(
-                            '₹ 150.00',
-                            style: TextStyle(fontSize: 12.0),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 10.0),
-                      // Row(
-                      //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      //   crossAxisAlignment: CrossAxisAlignment.center,
-                      //   mainAxisSize: MainAxisSize.max,
-                      //   children: [
-                      //     Text(
-                      //       'Safety & Partner Welfare Fees',
-                      //       style: TextStyle(fontSize: 12.0),
-                      //     ),
-                      //     Text(
-                      //       '₹ 500.00',
-                      //       style: TextStyle(fontSize: 12.0),
-                      //     ),
-                      //   ],
-                      // ),
-                    ],
-                  ),
-                ),
-              ),
               Positioned(
                 bottom: 20.0,
                 child: Container(
