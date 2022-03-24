@@ -1,7 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:bestro/constants/strings.dart';
 import 'package:bestro/models/servicesModel.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+
+import '../../routes/router.gr.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -145,38 +148,41 @@ class _HomePageState extends State<HomePage> {
                 physics: BouncingScrollPhysics(),
                 children: List.generate(
                   services.length,
-                  (i) => Container(
-                    width: 100.0,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(
-                        color: Colors.grey.withOpacity(.2),
+                  (i) => InkWell(
+                    onTap: () {},
+                    child: Container(
+                      width: 100.0,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          color: Colors.grey.withOpacity(.2),
+                        ),
                       ),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        CircleAvatar(
-                          minRadius: 15.0,
-                          maxRadius: 25.0,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(services[i].image),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          CircleAvatar(
+                            minRadius: 15.0,
+                            maxRadius: 25.0,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(services[i].image),
+                                ),
+                                shape: BoxShape.circle,
                               ),
-                              shape: BoxShape.circle,
                             ),
                           ),
-                        ),
-                        Text(
-                          services[i].name,
-                          style: TextStyle(
-                            fontSize: width * .035,
+                          Text(
+                            services[i].name,
+                            style: TextStyle(
+                              fontSize: width * .035,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
